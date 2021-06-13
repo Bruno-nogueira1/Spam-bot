@@ -13,7 +13,7 @@ root.resizable(False,False)
 
 def main():
     spamvaria = spam.get()
-    delayvaria = int(delay.get())
+    delayvaria = float(delay.get())
     quantidadevaria  = int(quantidade.get())
     arq = open('spam.txt', 'w+',encoding='utf8')
     arq.write(spamvaria)
@@ -21,6 +21,7 @@ def main():
         arq = open('spam.txt', 'r',encoding='utf8')
         for frase in arq:
             sleep(delayvaria)
+            auto.typewrite(' ')
             auto.typewrite(frase)
             auto.press('enter')
     
